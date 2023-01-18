@@ -1,2 +1,12 @@
 <app-header></app-header>
+
+<main>
+  <h1>Content</h1>
+
+  <pre>
+    <h2 *ngIf="data.hasError">Unable to call the API</h2>
+    {{ data.data | json }}
+  </pre>
+</main>
+
 <router-outlet></router-outlet>
