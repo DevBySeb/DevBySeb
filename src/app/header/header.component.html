@@ -9,7 +9,12 @@
     <li class="menu" [class.is-open]="isMenuOpen">
       <a href="#" class="menu-item">Home</a>
       <a href="#" class="menu-item">About</a>
-      <a href="#" class="menu-item">Sign in / Register</a>
+      <a
+        [routerLink]="['/login']"
+        routerLinkActive="router-link-active"
+        class="menu-item"
+        >Sign in / Register</a
+      >
       <a href="#" class="menu-item">Contact</a>
     </li>
   </ul>

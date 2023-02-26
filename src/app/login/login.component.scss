@@ -1,0 +1,56 @@
+@mixin focus {
+  &:focus {
+    outline-offset: 2px;
+    outline: 2px solid #07c;
+  }
+}
+
+form {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 16px 16px 24px;
+  box-shadow: 0 2px 32px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  h1 {
+    margin-top: 0;
+    color: #555;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+.form-control {
+  margin-bottom: 16px;
+  input,
+  label {
+    display: block;
+  }
+
+  label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  input {
+    padding: 8px;
+    height: 35px;
+    border-radius: 4px;
+    width: 100%;
+    border: 2px solid #ccc;
+    background-color: white;
+
+    @include focus;
+  }
+}
+
+button {
+  background-color: #000;
+  color: #fff;
+  padding: 8px 24px;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 1.2rem;
+  @include focus;
+}
