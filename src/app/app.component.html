@@ -1,2 +1,36 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<main>
+  <form [formGroup]="userGroup" (submit)="createOrUpdateUser()">
+    <label for="name">Name</label>
+    <input
+      required
+      placeholder="Add your name"
+      formControlName="name"
+      id="name"
+    />
+    <label for="email">Email</label>
+    <input
+      type="email"
+      required
+      placeholder="Add your email"
+      formControlName="email"
+      id="name"
+    />
+    <button type="submit">
+      {{ userGroup.value.id !== -1 ? "Edit" : "Add" }} user
+    </button>
+  </form>
+
+  <div>
+    <h1>My users</h1>
+    <ul class="list">
+      <li *ngFor="let user of users; let i = index">
+        {{ user.name }} - {{ user.email }}
+
+        <div>
+          <button (click)="triggerEdit(i)">Edit</button>
+          <button (click)="deleteUser(i)">Delete</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</main>

@@ -1,0 +1,53 @@
+main {
+  display: flex;
+  margin: 40px;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.list {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  width: 360px;
+  list-style: none;
+
+  li {
+    padding: 8px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+form {
+  background-color: #eee;
+  margin-right: 80px;
+  padding: 24px;
+  border-radius: 4px;
+  display: inline-block;
+
+  label {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+  button,
+  input {
+    display: block;
+    padding: 8px;
+  }
+
+  input {
+    border: 2px solid #ccc;
+    margin-bottom: 8px;
+  }
+
+  button {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+  }
+}
