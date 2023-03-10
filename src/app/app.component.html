@@ -1,2 +1,5 @@
 <app-header></app-header>
+<button (click)="switchLanguage('sv')">Switch to Swedish</button>
+<button (click)="switchLanguage('en')">Switch to English</button>
+{{ "title" | translate }}
 <router-outlet></router-outlet>
