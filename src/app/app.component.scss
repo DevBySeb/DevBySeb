@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  margin: 100px;
+}
+
+.form-control {
+  margin-bottom: 16px;
+
+  label,
+  input {
+    display: block;
+  }
+
+  input {
+    padding: 8px;
+  }
+}

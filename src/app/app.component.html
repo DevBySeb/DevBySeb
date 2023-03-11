@@ -1,2 +1,36 @@
-<app-header></app-header>
+<h1>Reactive forms</h1>
+
+<h1>This is my lonely control</h1>
+<input [formControl]="control" />
+
+<div *ngFor="let formGroup of formArrayControls; let i = index">
+  <h2>Form {{ i + 1 }}</h2>
+  <form [formGroup]="formGroup">
+    <div class="form-control">
+      <label for="name">Name</label>
+      <input formControlName="name" id="name" />
+    </div>
+    <div class="form-control">
+      <label for="email">Email</label>
+      <input formControlName="email" id="email" />
+    </div>
+  </form>
+  <button (click)="removeFormItem(i)">Delete form item</button>
+  <hr />
+</div>
+<br />
+<br />
+<button (click)="addFormItem()">Add form item</button>
+<button (click)="submit()">Submit</button>
+<!-- <form (submit)="submit()" [formGroup]="myForm">
+  <div class="form-control">
+    <label for="name">Name</label>
+    <input formControlName="name" id="name" />
+  </div>
+  <div class="form-control">
+    <label for="email">Email</label>
+    <input formControlName="email" id="email" />
+  </div>
+  <button type="submit">Submit</button>
+</form> -->
 <router-outlet></router-outlet>
