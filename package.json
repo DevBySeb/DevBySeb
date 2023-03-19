@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --output-hashing=none --configuration production",
+    "package": "cat dist/angular/{runtime,polyfills,main}.js > dist/angular/component-lib.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -14,6 +15,7 @@
     "@angular/common": "^15.0.0",
     "@angular/compiler": "^15.0.0",
     "@angular/core": "^15.0.0",
+    "@angular/elements": "^15.0.4",
     "@angular/forms": "^15.0.0",
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",

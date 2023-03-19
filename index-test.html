@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="user-form">
+      <dbs-input label="Name" type="text" value="Hello world"></dbs-input>
+      <dbs-input label="Email" type="email" value="Hello world"></dbs-input>
+      <dbs-input label="Message" type="text" value="Hello world"></dbs-input>
+      <button type="button" onclick="getFormValues()">Submit</button>
+    </form>
+
+    <script>
+      const form = document.getElementById("user-form");
+      Array.from(form.querySelectorAll("dbs-input")).forEach((input) => {
+        input.addEventListener("valueChange", (e) => {
+          console.log(e.target.value);
+        });
+      });
+      function getFormValues() {
+        const form = document.getElementById("user-form");
+
+        const data = Array.from(form.querySelectorAll("dbs-input")).map(
+          (input) => {
+            return {
+              label: input.label,
+              value: input.value,
+            };
+          }
+        );
+        console.log(data);
+      }
+    </script>
+    <script src="./dist/angular/component-lib.js"></script>
+  </body>
+</html>
