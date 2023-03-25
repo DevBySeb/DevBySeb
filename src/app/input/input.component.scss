@@ -1,0 +1,27 @@
+.form-control {
+  .error,
+  .help-text,
+  label,
+  input {
+    display: block;
+  }
+
+  input {
+    padding: 8px;
+  }
+
+  label {
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+
+  .help-text {
+    font-size: 14px;
+  }
+
+  .error {
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}

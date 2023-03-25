@@ -1,0 +1,21 @@
+<div class="form-control">
+  <label [for]="inputId" *ngIf="label">{{ label }}</label>
+  <input
+    [id]="inputId"
+    [placeholder]="placeholder"
+    [attr.aria-describedby]="ariaDescribedBy"
+    [formControl]="control"
+  />
+  <span
+    *ngIf="control.errors"
+    class="error"
+    [id]="inputId + '-error'"
+    role="alert"
+  >
+    The {{ label }} is required
+  </span>
+
+  <span class="help-text" *ngIf="helpText" [id]="inputId + '-help'">
+    {{ helpText }}
+  </span>
+</div>
