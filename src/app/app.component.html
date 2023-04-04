@@ -1,2 +1,7 @@
 <app-header></app-header>
 <router-outlet></router-outlet>
+
+<input [formControl]="searchControl" type="search" />
+<pre>
+  {{ data$ | async | json }}
+</pre>
