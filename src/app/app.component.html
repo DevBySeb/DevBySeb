@@ -1,2 +1,19 @@
-<app-header></app-header>
 <router-outlet></router-outlet>
+
+<form [formGroup]="formGroup">
+  <app-input
+    [customErrorMessages]="errorMessages"
+    label="Hello"
+    inputId="myId"
+    formControlName="name"
+  ></app-input>
+  <app-select
+    [customErrorMessages]="errorMessages"
+    label="Hello"
+    selectId="myId"
+    [options]="['1', '2', '3']"
+    formControlName="age"
+  ></app-select>
+</form>
+
+{{ formGroup.value | json }}
