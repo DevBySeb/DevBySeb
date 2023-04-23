@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  @Output() menuOpenedState = new EventEmitter<boolean>();
   isMenuOpen = false;
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
+
+    this.menuOpenedState.emit(this.isMenuOpen);
   }
+
+  menuWasOpened(): void {}
 }
