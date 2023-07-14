@@ -1,0 +1,28 @@
+<div class="todo-wrapper">
+  <ul class="todo-list">
+    <li *ngFor="let post of todos()">
+      <span>
+        {{ post.title }}
+      </span>
+
+      <div>
+        <button (click)="editTodo(post)">Edit</button>
+        <button (click)="deleteTodo(post.id)">Delete</button>
+      </div>
+    </li>
+  </ul>
+
+  <div class="todo-form">
+    <form [formGroup]="todoForm">
+      <input
+        type="text"
+        formControlName="title"
+        name="title"
+        placeholder="Title"
+      />
+      <button (click)="addOrUpdateTodo()">
+        {{ todoForm.value.id === -1 ? "Add" : "Update" }} todo
+      </button>
+    </form>
+  </div>
+</div>

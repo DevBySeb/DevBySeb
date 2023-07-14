@@ -1,0 +1,43 @@
+.todo-wrapper {
+  display: flex;
+  align-items: center;
+  .todo-list {
+    padding: 24px;
+    margin: 0;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+
+      &:not(:last-child) {
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #eee;
+      }
+
+      button {
+        border: 0;
+        padding: 4px 8px;
+        font-size: 0.9rem;
+        margin-left: 8px;
+        border-radius: 4px;
+        color: white;
+        background: black;
+
+        &:hover {
+          background: #333;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .todo-form {
+    padding: 24px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+}
