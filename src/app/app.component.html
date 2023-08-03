@@ -1,2 +1,21 @@
 <app-header></app-header>
 <router-outlet></router-outlet>
+
+<pre>
+  {{ stateFacade.article.state() | json }}
+</pre>
+
+<ul>
+  <li *ngFor="let article of stateFacade.article.state().resources">
+    {{ article.title }} - {{ article.content }}
+    <button (click)="toggleEdit(article)">Edit</button>
+    <button (click)="deleteArticle(article)">Delete</button>
+  </li>
+</ul>
+<form [formGroup]="form">
+  <label for="">Title</label>
+  <input formControlName="title" type="text" />
+  <label for="">Content</label>
+  <textarea formControlName="content" type="text"></textarea>
+  <button (click)="createOrUpdate()">Save</button>
+</form>
