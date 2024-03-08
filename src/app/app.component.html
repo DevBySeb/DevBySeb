@@ -1,2 +1,7 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<h1>Perform test</h1>
+
+<div *ngIf="perform.isLoading()">...loading data</div>
+
+<pre
+  >{{ perform.action$ | async | json }}
+</pre>
